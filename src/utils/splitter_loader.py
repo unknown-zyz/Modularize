@@ -11,14 +11,8 @@ def load_splitter(model_name, dataset_name):
 
 
 def load_splitter_normal(model_name):
-    if model_name == 'simcnn':
-        from splitters.simcnn_splitter import GradSplitter
-    elif model_name == 'rescnn':
+    if model_name == 'rescnn':
         from splitters.rescnn_splitter import GradSplitter
-    elif model_name == 'incecnn':
-        from splitters.incecnn_splitter import GradSplitter
-    elif model_name == 'resnet':
-
     else:
         raise ValueError()
     return GradSplitter

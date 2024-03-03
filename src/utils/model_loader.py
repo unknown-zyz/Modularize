@@ -5,16 +5,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def load_model(model_name, num_classes=10):
-    if model_name == 'simcnn':
-        from models.simcnn import SimCNN
-        model = SimCNN(num_classes=num_classes)
-    elif model_name == 'rescnn':
-        from models.rescnn import ResCNN
-        model = ResCNN(num_classes=num_classes)
-    elif model_name == 'incecnn':
-        from models.incecnn import InceCNN
-        model = InceCNN()
-    elif model_name == 'resnet':
+    if model_name == 'resnet':
         model = torchvision.models.resnet18(pretrained=False)
     else:
         raise ValueError
